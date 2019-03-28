@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Legendary_Rune_Maker</RootNamespace>
     <AssemblyName>Legendary Rune Maker</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -32,6 +32,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,7 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Images\lrm_icon.ico</ApplicationIcon>
@@ -91,9 +92,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -123,10 +121,16 @@
     </Compile>
     <Compile Include="Controls\SummonerSpellControl.cs" />
     <Compile Include="Data\ImageCache.cs" />
+    <Compile Include="Locale\Text.Designer.cs">
+      <DependentUpon>Text.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="LRM.cs" />
     <Compile Include="Utils\BitmapUtils.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\ObjectToTypeConverter.cs" />
+    <Compile Include="Utils\RelayCommand.cs" />
     <Compile Include="Utils\StringContainsConverter.cs" />
     <Compile Include="Utils\TriggerTracing.cs" />
     <Compile Include="Utils\UppercaseConverter.cs" />
@@ -143,11 +147,6 @@
     </Compile>
     <Compile Include="Windows\LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Locale\Text.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Text.resx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AutomationPage.xaml.cs">
       <DependentUpon>AutomationPage.xaml</DependentUpon>

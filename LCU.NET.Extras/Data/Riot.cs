@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Legendary_Rune_Maker.Data
 {
-    internal static class Riot
+    public static class Riot
     {
         public const string CdnEndpoint = "https://ddragon.leagueoflegends.com/cdn/";
 
@@ -208,7 +208,7 @@ namespace Legendary_Rune_Maker.Data
             int p = 0;
             await Task.WhenAll(total.Select(async o =>
             {
-                await ImageCache.Instance.Get(o);
+                //await ImageCache.Instance.Get(o);
                 progress((double)p++ / count);
             }));
         }

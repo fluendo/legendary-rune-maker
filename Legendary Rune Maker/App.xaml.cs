@@ -1,5 +1,6 @@
 ﻿using Anotar.Log4Net;
 using LCU.NET;
+using LCU.NET.Extras;
 using Legendary_Rune_Maker.Data;
 using Legendary_Rune_Maker.Game;
 using Legendary_Rune_Maker.Pages;
@@ -29,6 +30,7 @@ namespace Legendary_Rune_Maker
             LogTo.Info($"Starting LRM {LRM.GitCommit}@{LRM.GitBranch}");
 
             Container = new StandardKernel();
+            LCUApp.Container = Container;
         }
 
         public App()

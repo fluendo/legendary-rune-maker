@@ -21,7 +21,7 @@ namespace Legendary_Rune_Maker.Game
                         HasSetIntent;
         }
 
-        internal static readonly Provider[] RuneProviders = new Provider[]
+        public static readonly Provider[] RuneProviders = new Provider[]
         {
             new ClientProvider(),
             new ChampionGGProvider(),

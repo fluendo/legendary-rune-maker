@@ -1,6 +1,6 @@
-﻿using Legendary_Rune_Maker.Data;
+﻿using LCU.NET.Extras.Data;
+using Legendary_Rune_Maker.Data;
 using Legendary_Rune_Maker.Game;
-using Notifications.Wpf;
 using System;
 using System.Threading.Tasks;
 

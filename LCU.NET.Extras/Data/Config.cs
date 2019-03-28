@@ -103,8 +103,8 @@ namespace Legendary_Rune_Maker.Data
             }
             catch
             {
-                if (!DesignerProperties.GetIsInDesignMode(new DependencyObject()))
-                    throw;
+                //if (!DesignerProperties.GetIsInDesignMode(new DependencyObject()))
+                throw;
             }
         }
 
@@ -121,7 +121,7 @@ namespace Legendary_Rune_Maker.Data
 
             try
             {
-                if (!File.Exists(FilePath) || MainWindow.InDesigner)
+                if (!File.Exists(FilePath)/* || MainWindow.InDesigner*/)
                 {
                     c = new Config();
                 }
@@ -132,8 +132,8 @@ namespace Legendary_Rune_Maker.Data
             }
             catch
             {
-                if (DesignerProperties.GetIsInDesignMode(new DependencyObject()))
-                    return new Config();
+                //if (DesignerProperties.GetIsInDesignMode(new DependencyObject()))
+                //    return new Config();
 
                 throw;
             }
