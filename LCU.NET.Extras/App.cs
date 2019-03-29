@@ -20,7 +20,7 @@ namespace LCU.NET.Extras
         {
             get;
             set;
-        }
+        } = new StandardKernel();
 
     }
 }

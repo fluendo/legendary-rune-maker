@@ -29,8 +29,7 @@ namespace Legendary_Rune_Maker
         {
             LogTo.Info($"Starting LRM {LRM.GitCommit}@{LRM.GitBranch}");
 
-            Container = new StandardKernel();
-            LCUApp.Container = Container;
+            Container = LCUApp.Container;
         }
 
         public App()
