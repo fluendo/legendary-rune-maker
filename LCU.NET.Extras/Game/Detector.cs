@@ -15,7 +15,7 @@ namespace Legendary_Rune_Maker.Game
     {
         protected Container<Actuator.State> State { get; private set; }
         protected ILoL LoL { get; }
-        protected IMainWindow MainWindow { get; }
+        protected IUiActuator MainWindow { get; }
 
         public bool Enabled { get; set; } = true;
 

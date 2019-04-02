@@ -27,7 +27,7 @@ namespace Legendary_Rune_Maker.Pages
     /// <summary>
     /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class MainPage : Page, IMainWindow, IPage, INotifyPropertyChanged
+    public partial class MainPage : Page, IUiActuator, IPage, INotifyPropertyChanged
     {
         public static double BaseWidth { get; } = 303;
         public static double BaseHeight { get; } = 310;

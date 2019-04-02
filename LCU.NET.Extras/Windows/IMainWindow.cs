@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Legendary_Rune_Maker
 {
-    public interface IMainWindow
+    /// <summary>
+    /// Interface to interact with the main UI
+    /// </summary>
+    public interface IUiActuator
     {
         //event EventHandler SelectionChanged;
 
@@ -17,6 +20,7 @@ namespace Legendary_Rune_Maker
 
         void SafeInvoke(Action act);
         T SafeInvoke<T>(Func<T> act);
+
         void SetState(GameStates state);
         void ShowNotification(string title, string message = null, NotificationType type = NotificationType.Information);
         Task<RunePage> LoadPageFromDefaultProvider(int championId = -1);

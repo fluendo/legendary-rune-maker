@@ -32,7 +32,7 @@ namespace Legendary_Rune_Maker.Game
             new RunesLolProvider()
         };
 
-        public IMainWindow Main { get; set; }
+        public IUiActuator Main { get; set; }
 
         private ILeagueClient LeagueClient => LoL.Client;
 

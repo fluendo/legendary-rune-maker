@@ -10,7 +10,7 @@ namespace LCU.NET.Extras
 {
     public static class LCUApp
     {
-        public static IMainWindow MainWindow
+        public static IUiActuator MainWindow
         {
             get;
             set;
