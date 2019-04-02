@@ -16,6 +16,7 @@
 	<dependency id="Ninject"/>
 	<dependency id="RestSharp"/>
 	<dependency id="SharpZipLib"/>
+    <dependency id="WebSocketSharp"/>
     </dependencies>
   </metadata>
 </package>
