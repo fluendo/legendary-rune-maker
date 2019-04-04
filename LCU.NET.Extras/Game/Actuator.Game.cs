@@ -306,5 +306,19 @@ namespace Legendary_Rune_Maker.Game
 				LogTo.Debug ("Uploaded spells");
 			}
 		}
+
+		public async Task<bool> CanConnect ()
+		{
+			const string disallowedPlatform = "KR";
+			bool allowed = false;
+			try {
+				string platform = await LeagueClient.MakeRequestAsync<string> ("/lol-platform-config/v1/namespaces/LoginDataPacket/platformId", Method.GET);
+				allowed = platform != disallowedPlatform;
+			} catch(Exception ex) {
+				LogTo.ErrorException("Cannot get platform. Disallowing connection", ex);
+				allowed = false;
+			}
+			return allowed;
+		}
 	}
 }

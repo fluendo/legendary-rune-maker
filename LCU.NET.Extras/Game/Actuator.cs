@@ -88,7 +88,15 @@ namespace Legendary_Rune_Maker.Game
 			LogTo.Debug ("Initialized detectors");
 		}
 
-		private void LeagueClient_ConnectedChanged (bool connected)
+		public void Close ()
+		{
+			LeagueClient.ConnectedChanged -= LeagueClient_ConnectedChanged;
+			GameState.State.EnteredState -= State_EnteredState;
+			LeagueClient.Close ();
+			Enabled = false;
+		}
+
+		private async void LeagueClient_ConnectedChanged (bool connected)
 		{
 			LogTo.Debug ("Connected: " + connected);
 
@@ -110,6 +118,13 @@ namespace Legendary_Rune_Maker.Game
 					await Task.Delay (1000);
 					LeagueClient.BeginTryInit ();
 				});
+			} else if (state == GameStates.Disallowed) {
+				LogTo.Debug ("Connection not allowed. Closing League Client");
+				Close ();
+			} else if (state == GameStates.LoggedIn) {
+				if (!await CanConnect ()) {
+					GameState.State.Fire (GameTriggers.Disallow);
+				}
 			}
 		}
 	}
