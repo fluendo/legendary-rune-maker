@@ -115,11 +115,7 @@ namespace Legendary_Rune_Maker.Data
 			Config c;
 
 			try {
-				if (!File.Exists (FilePath)) {
-					c = new Config ();
-				} else {
-					c = JsonConvert.DeserializeObject<Config> (File.ReadAllText (FilePath));
-				}
+				c = new Config ();
 			} catch {
 				throw;
 			}
@@ -130,7 +126,6 @@ namespace Legendary_Rune_Maker.Data
 			if (c.ConfigVersion < LatestVersion)
 				c.ConfigVersion = LatestVersion;
 
-			c.Save ();
 			return c;
 		}
 	}
