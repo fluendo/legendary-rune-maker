@@ -10,7 +10,8 @@ trigger:
     include:
     - master
 
-pr: none
+pr:
+- master
 
 steps:
 - task: NuGetToolInstaller@1
@@ -51,4 +52,5 @@ steps:
     command: push
     nuGetFeedType: external
     publishFeedCredentials: 'http://212.81.198.102:8085/'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
 
