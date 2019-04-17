@@ -78,7 +78,7 @@ namespace Legendary_Rune_Maker.Game
 			LogTo.Debug ("possibleBans: {0}", string.Join (", ", possibleBans));
 
 			int preferredBan = possibleBans.FirstOrDefault (bannable.championIds.Contains);
-			var banName = preferredBan > 0 ? Riot.GetChampion (preferredBan).Name : "None";
+			var banName = preferredBan > 0 ? (await Riot.GetChampion (preferredBan)).Name : "None";
 			LogTo.Debug ("Preferred ban: {0}", banName);
 
 			if (preferredBan == 0) {
@@ -312,8 +312,8 @@ namespace Legendary_Rune_Maker.Game
 			try {
 				string platform = await LeagueClient.MakeRequestAsync<string> ("/lol-platform-config/v1/namespaces/LoginDataPacket/platformId", Method.GET);
 				allowed = platform != disallowedPlatform;
-			} catch(Exception ex) {
-				LogTo.ErrorException("Cannot get platform. Disallowing connection", ex);
+			} catch (Exception ex) {
+				LogTo.ErrorException ("Cannot get platform. Disallowing connection", ex);
 				allowed = false;
 			}
 			return allowed;

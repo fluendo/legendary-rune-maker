@@ -35,10 +35,10 @@ namespace Legendary_Rune_Maker.Data.Providers
 
 		public bool Supports (Options options) => (ProviderOptions & options) == options;
 
-		protected RunePage FillStatsIfNone (RunePage page)
+		protected async Task<RunePage> FillStatsIfNone (RunePage page)
 		{
 			if (page.RuneIDs.Length == 6) {
-				var allStats = Riot.GetStatRuneStructureAsync ().Result;
+				var allStats = await Riot.GetStatRuneStructureAsync ();
 				page.RuneIDs = page.RuneIDs.Concat (new[] { allStats[0][0].ID, allStats[1][0].ID, allStats[2][0].ID }).ToArray ();
 			}
 

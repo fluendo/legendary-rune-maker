@@ -22,15 +22,14 @@ namespace Legendary_Rune_Maker.Game
 						HasSetIntent;
 		}
 
-		public static List<Provider> RuneProviders = new List<Provider>
-		{
-			new ClientProvider(),
-			new ChampionGGProvider(),
-			new MetaLolProvider(),
-			new LolFlavorProvider(),
-			new UGGProvider(),
-			new OpGGProvider(),
-			new RunesLolProvider()
+		public static List<Provider> RuneProviders = new List<Provider> {
+			//new ClientProvider(),
+			//new ChampionGGProvider(),
+			//new MetaLolProvider(),
+			//new LolFlavorProvider(),
+			//new UGGProvider(),
+			//new OpGGProvider(),
+			//new RunesLolProvider()
 		};
 
 		public IUiActuator Main { get; set; }
@@ -96,7 +95,7 @@ namespace Legendary_Rune_Maker.Game
 			Enabled = false;
 		}
 
-		private async void LeagueClient_ConnectedChanged (bool connected)
+		private void LeagueClient_ConnectedChanged (bool connected)
 		{
 			LogTo.Debug ("Connected: " + connected);
 
