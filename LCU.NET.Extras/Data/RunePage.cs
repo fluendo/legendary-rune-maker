@@ -60,7 +60,7 @@ namespace Legendary_Rune_Maker.Data
 				primaryStyleId = PrimaryTree,
 				subStyleId = SecondaryTree,
 				selectedPerkIds = RuneIDs,
-				name = this.Name ?? Riot.GetChampion (ChampionID).Name + " - " + Enum.GetName (typeof (Position), Position)
+				name = this.Name ?? (await Riot.GetChampion (ChampionID)).Name + " - " + Enum.GetName (typeof (Position), Position)
 			};
 
 			LogTo.Debug ("Uploading rune page with name '{0}' and runes [ {1} ]", page.name, string.Join (", ", RuneIDs));
