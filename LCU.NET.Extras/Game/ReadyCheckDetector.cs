@@ -53,7 +53,6 @@ namespace Legendary_Rune_Maker.Game
                 IsAccepting = true;
 
                 LogTo.Info("Accepting matchmaking...");
-                Notify("Accepting match", null, NotificationType.Success);
 
 #pragma warning disable CS4014
                 Task.Run(async () =>
